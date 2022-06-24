@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff7dd5a4db0943d09049d19db18f3086" Name="Diagram1">
+        <EntityTypeShape EntityType="Shopping_CenterModel.Employees" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shopping_CenterModel.Pavilion" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shopping_CenterModel.Rents" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shopping_CenterModel.Shop_Centers" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shopping_CenterModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shopping_CenterModel.Tenants" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <AssociationConnector Association="Shopping_CenterModel.FK_Rents_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="Shopping_CenterModel.FK_Pavilion_Shopping_centers" ManuallyRouted="false" />
+        <AssociationConnector Association="Shopping_CenterModel.FK_Rents_Pavilion" ManuallyRouted="false" />
+        <AssociationConnector Association="Shopping_CenterModel.FK_Rents_Renters" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

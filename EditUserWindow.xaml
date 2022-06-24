@@ -1,0 +1,42 @@
+﻿<Window x:Class="KingIT.EditUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KingIT"
+        mc:Ignorable="d"
+        Title="EditUserWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="2">
+            <Image Source="{Binding CurrentEmployee.Photo}"/>
+            <UniformGrid Rows="2">
+                <Button Content="Назад" Click="ButBack_Click"/>
+                <Button Content="Сохранить" Click="ButSave_Click"/>
+            </UniformGrid>
+        </UniformGrid>
+        <UniformGrid Grid.Row="1" Columns="2">
+            <TextBlock Text="Фамилия"/>
+            <TextBox Text="{Binding CurrentEmployee.Surname}"/>
+            <TextBlock Text="Имя"/>
+            <TextBox Text="{Binding CurrentEmployee.Name}"/>
+            <TextBlock Text="Отчество"/>
+            <TextBox Text="{Binding CurrentEmployee.Secondname}"/>
+            <TextBlock Text="Логин"/>
+            <TextBox Text="{Binding CurrentEmployee.Login}"/>
+            <TextBlock Text="Пароль"/>
+            <TextBox Text="{Binding CurrentEmployee.Password}"/>
+            <TextBlock Text="Пол"/>
+            <ComboBox ItemsSource="{Binding GenderCollection}" SelectedItem="{Binding CurrentEmployee.Gender}"/>
+            <TextBlock Text="Роль"/>
+            <ComboBox ItemsSource="{Binding RoleCollection}" SelectedItem="{Binding CurrentEmployee.Role}"/>
+            <TextBlock Text="Номер телефона"/>
+            <TextBox Text="{Binding CurrentEmployee.Telephone}"/>
+            <TextBlock Text="Фотография"/>
+            <Button x:Name="LoadPicture" Content="Загрузить фото" Click="LoadPicture_Click"/>
+        </UniformGrid>
+    </Grid>
+</Window>

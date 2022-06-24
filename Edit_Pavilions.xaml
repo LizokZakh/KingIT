@@ -1,0 +1,38 @@
+﻿<Window x:Class="KingIT.Edit_Pavilions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KingIT"
+        mc:Ignorable="d"
+        Title="Edit_Pavilions" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="224"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Номер этажа" HorizontalAlignment="Left" Height="37" Margin="10,10,0,0" VerticalAlignment="Top" Width="204" FontSize="20" FontFamily="Arial"/>
+        <TextBlock Text="Номер павилиона" HorizontalAlignment="Left" Height="37" Margin="10,10.2,0,0" VerticalAlignment="Top" Width="204" FontSize="20" Grid.Row="1"/>
+        <TextBlock Text="Площадь" HorizontalAlignment="Left" Height="37" Margin="10,9.4,0,0" VerticalAlignment="Top" Width="204" FontSize="20" Grid.Row="2"/>
+        <TextBlock Text="Статус павилиона" HorizontalAlignment="Left" Height="37" Margin="10,9.6,0,0" VerticalAlignment="Top" Width="204" FontSize="20" Grid.Row="3"/>
+        <TextBlock Text="Коэф.Добав.Стоим." HorizontalAlignment="Left" Height="37" Margin="10,9.8,0,0" VerticalAlignment="Top" Width="204" FontSize="20" Grid.Row="4"/>
+        <TextBlock Text="Стоим.за кв.м" HorizontalAlignment="Left" Height="37" Margin="10,9,0,0" VerticalAlignment="Top" Width="204" FontSize="20" Grid.Row="5"/>
+        <TextBox Text="{Binding currentShop.Floor}" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="556" Grid.RowSpan="2"/>
+        <TextBox Text="{Binding currentShop.Number_Pavilion}" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="10,5.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="556" Grid.Row="1"/>
+        <TextBox Text="{Binding currentShop.Square}" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="10,9.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="556" Grid.Row="2"/>
+        <TextBox Text="{Binding currentShop.Added_value_factor}" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="10,8.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="556" Grid.Row="4"/>
+        <TextBox Text="{Binding currentShop.Cost_per_sq_m}" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="10,8.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="556" Grid.Row="5"/>
+        <Button Content="Сохранить" Grid.Row="8" Name="ButSave" Click="ButSave_Click" Margin="431,10.4,9.6,4" Grid.Column="1"/>
+        <ComboBox SelectedItem="{Binding currentShop.Status_Pavilion}" ItemsSource="{Binding listStatus}" Grid.Row="3" Height="36" Margin="10,10,9.6,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Content="Арендовать" Grid.Row="6" x:Name="ButSave_Copy" Click="ButArenda_Click" Margin="35,17,60,11"/>
+    </Grid>
+</Window>
