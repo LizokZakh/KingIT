@@ -39,10 +39,32 @@ namespace KingIT
             if (Start <= Stop && Start >= DateTime.Today) 
             {
                 bool stat = Start == DateTime.Today;
-                Shopping_CenterEntities.GetContext().RentOrBookPavilionInMall(!stat, pavilion.Number_Pavilion, pavilion.ID_Center, Start, Stop, currentTenants.ID_Renters, MainWindow.employeNumber);
-                MessageBox.Show(stat ? "Арендовано" : "Забронировано");
+                try
+                {
+                    Shopping_CenterEntities.GetContext().RentOrBookPavilionInMall(!stat, pavilion.Number_Pavilion, pavilion.ID_Center, Start, Stop, currentTenants.ID_Renters, MainWindow.employeNumber);
+                    if (stat == true)
+                    {
+                        MessageBox.Show("Арендовано");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Забронировано");
+                    }
+                    //MessageBox.Show(stat ? "Арендовано" : "Забронировано");
+                }
+                    catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
 
+        }
+
+        private void ButBack_Click(object sender, RoutedEventArgs e)
+        {
+            Edit_Pavilions win1 = new Edit_Pavilions(pavilion);
+            win1.Show();
+            this.Close();
         }
     }
 }

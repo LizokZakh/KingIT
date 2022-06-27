@@ -27,13 +27,6 @@
                 <DataGridTextColumn Width="*" Header="Стоимость" Binding="{Binding Cost}" FontFamily="Arial" FontSize="14" FontWeight="Bold" ></DataGridTextColumn>
                 <DataGridTextColumn Width="*" Header="Этажность" Binding="{Binding Number_floors}" FontFamily="Arial" FontSize="14" FontWeight="Bold" ></DataGridTextColumn>
                 <DataGridTextColumn Width="*" Header="Коэф.Добав.Стоим." Binding="{Binding Coef_Add_Price}" FontFamily="Arial" FontSize="14" FontWeight="Bold" ></DataGridTextColumn>
-                <DataGridTemplateColumn Header="Фотография">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding Photo}" Width="150"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

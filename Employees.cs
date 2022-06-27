@@ -20,9 +20,9 @@ namespace KingIT
             this.Rents = new HashSet<Rents>();
         }
 
-        public override string ToString()
+        public string FullData
         {
-            return $"{ID_Employees}: {Surname} {Name} {Secondname}";
+            get => $"{ID_Employees}: {Surname} {Name} {Secondname}";
         }
 
         public string Surname { get; set; }

@@ -7,12 +7,17 @@
         mc:Ignorable="d"
         Title="Arenda" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="500*"/>
+            <ColumnDefinition Width="163*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <UniformGrid Columns="2" Grid.Row="1">
+        <UniformGrid Columns="2" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,0,-0.4,0">
             <TextBlock Text="Арендатор"/>
             <ComboBox Name="ComboTenants" ItemsSource="{Binding tenantsCollection}" SelectedItem="{Binding currentTenants}" DisplayMemberPath="Name_Renters"/>
             <TextBlock Text="Дата начала"/>
@@ -20,6 +25,8 @@
             <TextBlock Text="Дата конца"/>
             <DatePicker SelectedDate="{Binding Stop, UpdateSourceTrigger=PropertyChanged}"/>
         </UniformGrid>
-        <Button Grid.Row="2" Click="Button_Click" Content="Зарезервировать"/>
+        <Button Grid.Row="2" Click="Button_Click" Content="Зарезервировать" Grid.ColumnSpan="3" Margin="0,34,-0.4,34"/>
+        <Image Source="/Resources/Эмблема.png" Margin="10,10,10.4,10" />
+        <Button Grid.Row="0" Margin="11.6,10,9.6,58" Click="ButBack_Click" Content="Назад" Grid.Column="2"/>
     </Grid>
 </Window>
