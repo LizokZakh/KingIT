@@ -19,12 +19,7 @@ namespace KingIT
         {
             this.Rents = new HashSet<Rents>();
         }
-
-        public string FullData
-        {
-            get => $"{ID_Employees}: {Surname} {Name} {Secondname}";
-        }
-
+    
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Secondname { get; set; }

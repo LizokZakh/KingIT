@@ -130,6 +130,12 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="procedureForTTs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numberCenter" Type="int" Mode="In" />
+        </Function>
+        <Function Name="procentTTs1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+          <Parameter Name="numCenter" Type="int" Mode="In" />
+        </Function>
         <Function Name="RentOrBookPavilionInMall" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="status_action" Type="bit" Mode="In" />
           <Parameter Name="pavilion_number" Type="nvarchar" Mode="In" />
@@ -393,6 +399,12 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="threeYear" />
+          <FunctionImport Name="procedureForTTs" ReturnType="Collection(Shopping_CenterModel.procedureForTTs_Result)" >
+            <Parameter Name="numberCenter" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="percent_of_tts" ReturnType="Collection(Shopping_CenterModel.procedureForTTs_Result)">
+            <Parameter Name="numberCenter" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -404,6 +416,11 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="procedureForTTs_Result">
+          <Property Type="String" Name="Name_Center" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="percents" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -516,6 +533,23 @@
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Shopping_CenterModel.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Shopping_CenterModel.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="threeYear" FunctionName="Хранилище Shopping_CenterModel.threeYear" />
+          <FunctionImportMapping FunctionImportName="procedureForTTs" FunctionName="Хранилище Shopping_CenterModel.procedureForTTs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Shopping_CenterModel.procedureForTTs_Result">
+                <ScalarProperty Name="Name_Center" ColumnName="Name_Center" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="percent_of_tts" FunctionName="Хранилище Shopping_CenterModel.procedureForTTs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Shopping_CenterModel.procedureForTTs_Result">
+                <ScalarProperty Name="Name_Center" ColumnName="Name_Center" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="percents" ColumnName="percents" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -89,5 +89,12 @@ namespace KingIT
                 }
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Payback payback = new Payback();
+            payback.Show();
+            this.Close();
+        }
     }
 }

@@ -103,6 +103,12 @@
     <Compile Include="PavilionTable.xaml.cs">
       <DependentUpon>PavilionTable.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Payback.xaml.cs">
+      <DependentUpon>Payback.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="procedureForTTs_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Rents.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -163,6 +169,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PavilionTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Payback.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

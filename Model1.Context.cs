@@ -40,6 +40,7 @@ namespace KingIT
         public virtual DbSet<Shop_Centers> Shop_Centers { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tenants> Tenants { get; set; }
+ 
     
         public virtual int RentOrBookPavilionInMall(Nullable<bool> status_action, string pavilion_number, Nullable<long> mall_id, Nullable<System.DateTime> start_date, Nullable<System.DateTime> end_date, Nullable<long> tenant_id, Nullable<long> employee_id)
         {
@@ -180,6 +181,24 @@ namespace KingIT
         public virtual int threeYear()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("threeYear");
+        }
+    
+        public virtual ObjectResult<procedureForTTs_Result> procedureForTTs(Nullable<int> numberCenter)
+        {
+            var numberCenterParameter = numberCenter.HasValue ?
+                new ObjectParameter("numberCenter", numberCenter) :
+                new ObjectParameter("numberCenter", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<procedureForTTs_Result>("procedureForTTs", numberCenterParameter);
+        }
+    
+        public virtual ObjectResult<procedureForTTs_Result> percent_of_tts(Nullable<int> numberCenter)
+        {
+            var numberCenterParameter = numberCenter.HasValue ?
+                new ObjectParameter("numberCenter", numberCenter) :
+                new ObjectParameter("numberCenter", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<procedureForTTs_Result>("percent_of_tts", numberCenterParameter);
         }
     }
 }
